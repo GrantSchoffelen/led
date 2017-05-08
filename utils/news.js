@@ -13,18 +13,17 @@ module.exports = {
             var headlines = "";
             articles.forEach((article)=>{
                 headlines+= article.title + '    ';
-            });
+            })
+
             var cmd = `sudo ./runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t '${headlines}'`;
             console.log(cmd)
-            exec('cd utils/matrix/python/samples/', function(error, stdout, stderr) {
-                exec(cmd, function(error, stdout, stderr) {
-                    if (error) {
-                      console.error(`exec error: ${error}`);
-                      return;
-                    }
-                    console.log(`stdout: ${stdout}`);
-                    console.log(`stderr: ${stderr}`);
-                });
+            exec(cmd, cwd: {'/home/pi/led/utils/matrix/python/samples'}, function(error, stdout, stderr) {
+                if (error) {
+                  console.error(`exec error: ${error}`);
+                  return;
+                }
+                console.log(`stdout: ${stdout}`);
+                console.log(`stderr: ${stderr}`);
             });
 
         })
