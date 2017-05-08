@@ -1,5 +1,6 @@
 const http = require('superagent'),
 config = require('../config');
+var exec = require('child_process').exec;
 
 
 module.exports = {
@@ -9,9 +10,22 @@ module.exports = {
         .end((err, res)=>{
             const resObj = JSON.parse(res.text)
             const articles = resObj.articles;
+            var headlines = "";
             articles.forEach((article)=>{
-                console.log(article.title)
+                headlines+= article.title + '    ';
             })
+            console.log(headlines)
+            var cmd = `sudo ./matrix/python/samples/runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t '${headlines}'`;
+            console.log(cmd)
+            exec(cmd, function(error, stdout, stderr) {
+                if (error) {
+                  console.error(`exec error: ${error}`);
+                  return;
+                }
+                console.log(`stdout: ${stdout}`);
+                console.log(`stderr: ${stderr}`);
+            });
+
         })
     }
 }
