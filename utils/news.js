@@ -13,17 +13,18 @@ module.exports = {
             var headlines = "";
             articles.forEach((article)=>{
                 headlines+= article.title + '    ';
-            })
-            console.log(headlines)
-            var cmd = `sudo ./matrix/python/samples/runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t '${headlines}'`;
+            });
+            var cmd = `sudo ./runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t '${headlines}'`;
             console.log(cmd)
-            exec(cmd, function(error, stdout, stderr) {
-                if (error) {
-                  console.error(`exec error: ${error}`);
-                  return;
-                }
-                console.log(`stdout: ${stdout}`);
-                console.log(`stderr: ${stderr}`);
+            exec('cd utils/matrix/python/samples/', function(error, stdout, stderr) {
+                exec('cmd', function(error, stdout, stderr) {
+                    if (error) {
+                      console.error(`exec error: ${error}`);
+                      return;
+                    }
+                    console.log(`stdout: ${stdout}`);
+                    console.log(`stderr: ${stderr}`);
+                });
             });
 
         })
