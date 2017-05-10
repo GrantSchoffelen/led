@@ -17,7 +17,7 @@ router.post('/', (req, res, next) => {
             from: '+16096143551',
             body: response.text
         }).then((message) => {
-            var cmd = `sudo ./runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t '${response.text}'`;
+            var cmd = `sudo ./runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t "${response.text}"`;
             exec(cmd, {cwd:'/home/pi/led/utils/matrix/python/samples'}, function(error, stdout, stderr) {
                 if (error) {
                   console.error(`exec error: ${error}`);
