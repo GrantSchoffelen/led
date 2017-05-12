@@ -19,9 +19,7 @@ class GraphicsTest(SampleBase):
         graphics.DrawLine(canvas, 5, 5, 22, 13, red)
 
         blue = graphics.Color(0, 0, 255)
-        graphics.DrawText(canvas, font, 2, 16, blue, "Whats up")
-
-        len = graphics.DrawText(canvas, font, pos, 10, textColor, my_text)
+        len = graphics.DrawText(canvas, font, 2, 16, blue, "Whats up")
 
         pos -= 1
         if (pos + len < 0):
