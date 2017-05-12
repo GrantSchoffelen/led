@@ -18,7 +18,7 @@ router.post('/', (req, res, next) => {
             body: response.text
         }).then((message) => {
             var cmd = `sudo ./runtext.py --led-no-hardware-pulse LED_NO_HARDWARE_PULSE -c 2 -t "${response.text}"`;
-            exec(cmd, {cwd:'/home/pi/led/utils/matrix/python/samples'}, function(error, stdout, stderr) {
+            exec(cmd, {cwd: config.pathToMatrixLib+'/python/samples'}, function(error, stdout, stderr) {
                 if (error) {
                   console.error(`exec error: ${error}`);
                   return;
