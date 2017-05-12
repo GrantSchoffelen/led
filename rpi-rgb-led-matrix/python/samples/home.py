@@ -10,6 +10,8 @@ class GraphicsTest(SampleBase):
 
     def run(self):
         canvas = self.matrix
+        pos = canvas.width
+        print(pos)
         font = graphics.Font()
         font.LoadFont("../../fonts/7x13.bdf")
 
@@ -19,14 +21,14 @@ class GraphicsTest(SampleBase):
         blue = graphics.Color(0, 0, 255)
         graphics.DrawText(canvas, font, 2, 16, blue, "Whats up")
 
-        while True:
-            offscreen_canvas.Clear()
-            len = graphics.DrawText(canvas, font, pos, 10, textColor, my_text)
-            pos -= 1
-            if (pos + len < 0):
-                pos = offscreen_canvas.width
+        len = graphics.DrawText(canvas, font, pos, 10, textColor, my_text)
 
-            time.sleep(0.05)
+        pos -= 1
+        if (pos + len < 0):
+            pos = offscreen_canvas.width
+
+        time.sleep(0.05)
+        offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
 
 
