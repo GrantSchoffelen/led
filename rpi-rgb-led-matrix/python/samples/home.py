@@ -26,7 +26,7 @@ class GraphicsTest(SampleBase):
             pos = canvas.width
 
         time.sleep(0.05)
-        # offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
+        offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
 
 
