@@ -1,26 +1,27 @@
 #!/usr/bin/env python
-# Display a runtext with double-buffering.
 from samplebase import SampleBase
 from rgbmatrix import graphics
 import time
 
 
-class RunText(SampleBase):
+class GraphicsTest(SampleBase):
     def __init__(self, *args, **kwargs):
-        super(RunText, self).__init__(*args, **kwargs)
-        self.parser.add_argument("-t", "--text", help="The text to scroll on the RGB LED panel", default="Hello world!")
+        super(GraphicsTest, self).__init__(*args, **kwargs)
 
     def run(self):
-        offscreen_canvas = self.matrix.CreateFrameCanvas()
+        canvas = self.matrix
         font = graphics.Font()
         font.LoadFont("../../fonts/7x13.bdf")
-        textColor = graphics.Color(255, 255, 0)
-        pos = offscreen_canvas.width
-        my_text = self.args.text
+
+        red = graphics.Color(255, 0, 0)
+        graphics.DrawLine(canvas, 5, 5, 22, 13, red)
+
+        blue = graphics.Color(0, 0, 255)
+        graphics.DrawText(canvas, font, 2, 16, blue, "Whats up")
 
         while True:
             offscreen_canvas.Clear()
-            len = graphics.DrawText(offscreen_canvas, font, pos, 10, textColor, my_text)
+            len = graphics.DrawText(canvas, font, pos, 10, textColor, my_text)
             pos -= 1
             if (pos + len < 0):
                 pos = offscreen_canvas.width
@@ -29,8 +30,9 @@ class RunText(SampleBase):
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
 
+
 # Main function
 if __name__ == "__main__":
-    run_text = RunText()
-    if (not run_text.process()):
-        run_text.print_help()
+    graphics_test = GraphicsTest()
+    if (not graphics_test.process()):
+        graphics_test.print_help()
