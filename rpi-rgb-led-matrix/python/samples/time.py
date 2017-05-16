@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 from samplebase import SampleBase
 from rgbmatrix import graphics
+from datetime import datetime
+from pytz import timezone
 import time
-
+eastern = timezone('EST')
 
 class GraphicsTest(SampleBase):
     def __init__(self, *args, **kwargs):
@@ -16,8 +18,8 @@ class GraphicsTest(SampleBase):
 	
 	while True:
 	    self.matrix.Clear()
-	    txtTime2 = time.strftime('%l:%M:%S%p')
-	    graphics.DrawText(canvas, font, -5, 6, color, txtTime2)
+	    txtTime = datetime.now(eastern).strftime('%l:%M:%S%p') 
+	    graphics.DrawText(canvas, font, 0, 6, color, txtTime)
 	    time.sleep(1)
 
 # Main function
