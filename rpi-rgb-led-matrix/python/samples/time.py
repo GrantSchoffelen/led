@@ -1,11 +1,9 @@
-
 #!/usr/bin/env python
 from samplebase import SampleBase
 from rgbmatrix import graphics
 from datetime import datetime
 from pytz import timezone
 import time
-
 
 eastern = timezone('US/Eastern')
 
