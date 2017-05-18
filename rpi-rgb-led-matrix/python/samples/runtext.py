@@ -3,7 +3,8 @@
 from samplebase import SampleBase
 from rgbmatrix import graphics
 import time
-loops = 3
+
+max_loops = 3
 
 
 
@@ -28,8 +29,7 @@ class RunText(SampleBase):
             if (pos + len < 0):
                 pos = offscreen_canvas.width
                 loops +=1
-                print(loops, 'loops')
-                if (loops is 2):
+                if (loops is max_loops):
                     break
             time.sleep(0.05)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
