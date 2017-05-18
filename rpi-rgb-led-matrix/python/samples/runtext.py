@@ -3,6 +3,9 @@
 from samplebase import SampleBase
 from rgbmatrix import graphics
 import time
+import sys  
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 max_loops = 3
 
@@ -16,15 +19,16 @@ class RunText(SampleBase):
     def run(self):
         offscreen_canvas = self.matrix.CreateFrameCanvas()
         font = graphics.Font()
-        font.LoadFont("../../fonts/8x13.bdf")
+        font.LoadFont("../../fonts/7x14.bdf")
         textColor = graphics.Color(255, 255, 0)
         pos = offscreen_canvas.width
         my_text = self.args.text
+	print(my_text)
         loops = 0;
 
         while True:
             offscreen_canvas.Clear()
-            len = graphics.DrawText(offscreen_canvas, font, pos, 30, textColor, my_text)
+            len = graphics.DrawText(offscreen_canvas, font, pos, 28, textColor, my_text)
             pos -= 1
             if (pos + len < 0):
                 pos = offscreen_canvas.width
