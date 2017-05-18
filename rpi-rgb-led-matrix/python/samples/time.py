@@ -5,7 +5,10 @@ from rgbmatrix import graphics
 from datetime import datetime
 from pytz import timezone
 import time
+
+
 eastern = timezone('US/Eastern')
+
 class GraphicsTest(SampleBase):
     def __init__(self, *args, **kwargs):
         super(GraphicsTest, self).__init__(*args, **kwargs)
