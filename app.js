@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var news = require('./utils/news');
+var clock = require('./utils/clock');
 
 
 var index = require('./routes/index');
@@ -39,6 +40,8 @@ app.use(function(req, res, next) {
 //get news headlines
 // news.getNewsHeadlines()
 
+//Start clock
+clock.startClock();
 
 
 // error handler
