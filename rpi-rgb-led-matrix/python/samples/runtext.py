@@ -3,6 +3,8 @@
 from samplebase import SampleBase
 from rgbmatrix import graphics
 import time
+loops = 3
+
 
 
 class RunText(SampleBase):
@@ -18,7 +20,7 @@ class RunText(SampleBase):
         pos = offscreen_canvas.width
         my_text = self.args.text
 
-        while True:
+        for x in range(0, loops):
             offscreen_canvas.Clear()
             len = graphics.DrawText(offscreen_canvas, font, pos, 10, textColor, my_text)
             pos -= 1
