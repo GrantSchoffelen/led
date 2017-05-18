@@ -29,7 +29,7 @@ class RunText(SampleBase):
                 pos = offscreen_canvas.width
                 loops +=1
                 print(loops, 'loops')
-                if (loops == 2)
+                if (loops is 2):
                     break
             time.sleep(0.05)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
