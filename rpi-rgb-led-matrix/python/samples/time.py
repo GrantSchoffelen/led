@@ -14,14 +14,14 @@ class GraphicsTest(SampleBase):
     def run(self):
         canvas = self.matrix
         font = graphics.Font()
-        font.LoadFont("../../fonts/4x6.bdf")
-        color = graphics.Color(0, 255, 255)
+        font.LoadFont("../../fonts/5x8.bdf")
+        color = graphics.Color(255, 0, 255)
 
         while True:
             self.matrix.Clear()
-            txtTime = datetime.now(eastern).strftime('%l:%M:%Sp')
+            txtTime = datetime.now(eastern).strftime('%l:%Mp')
             graphics.DrawText(canvas, font, 0, 6, color, txtTime)
-            time.sleep(1)
+            time.sleep(60)
 
 # Main function
 if __name__ == "__main__":
