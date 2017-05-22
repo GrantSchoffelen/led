@@ -17,18 +17,10 @@ class ImageScroller(SampleBase):
         double_buffer = self.matrix.CreateFrameCanvas()
         img_width, img_height = self.image.size
 
-        # let's scroll
-        xpos = 0
-        while True:
-            xpos += 1
-            if (xpos > img_width):
-                xpos = 0
+        double_buffer.SetImage(self.image, 16)
 
-            double_buffer.SetImage(self.image, -xpos)
-            double_buffer.SetImage(self.image, -xpos + img_width)
-
-            double_buffer = self.matrix.SwapOnVSync(double_buffer)
-            time.sleep(0.01)
+        double_buffer = self.matrix.SwapOnVSync(double_buffer)
+        time.sleep(0.01)
 
 # Main function
 # e.g. call with
