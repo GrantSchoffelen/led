@@ -19,9 +19,9 @@ class GraphicsTest(SampleBase):
 
         while True:
             self.matrix.Clear()
-            txtTime = datetime.now(eastern).strftime('%l:%Mp')
+            txtTime = datetime.now(eastern).strftime('%l:%M::%Sp')
             graphics.DrawText(canvas, font, 0, 6, color, txtTime)
-            time.sleep(60)
+            time.sleep(30)
 
 # Main function
 if __name__ == "__main__":
