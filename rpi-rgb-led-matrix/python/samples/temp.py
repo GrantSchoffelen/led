@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from samplebase import SampleBase
 from rgbmatrix import graphics
 import requests
