@@ -31,15 +31,16 @@ class GraphicsTest(SampleBase):
         future_16 = icons[res['hourly']['data'][15]['icon']]
         current_temp = math.ceil(res['currently']['apparentTemperature'])
         textTemp = ('%d°F, %s' % (current_temp, current_weather) )
+        textTemp = data.decode("utf8")
         canvas = self.matrix
         font = graphics.Font()
         font.LoadFont("../../fonts/5x8.bdf")
         color = graphics.Color(255, 0, 255)
-
+        print(textTemp)
         while True:
             self.matrix.Clear()
 
-            graphics.DrawText(canvas, font, 0, 6, color, txtTemp)
+            graphics.DrawText(canvas, font, 0, 6, color, textTemp)
             time.sleep(60)
 
 # Main function
