@@ -45,7 +45,7 @@ app.use(function(req, res, next) {
 clock.startClock();
 
 //get text
-temp.startTemp();
+// temp.startTemp();
 
 
 // error handler

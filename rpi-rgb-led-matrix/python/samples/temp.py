@@ -38,7 +38,6 @@ class GraphicsTest(SampleBase):
         font = graphics.Font()
         font.LoadFont("../../fonts/5x8.bdf")
         color = graphics.Color(255, 0, 255)
-        print(textTemp)
         while True:
             self.matrix.Clear()
 
