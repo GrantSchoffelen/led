@@ -41,14 +41,14 @@ class GraphicsTest(SampleBase):
         textTemp = textTemp.decode("utf8")
         canvas = self.matrix
         font = graphics.Font()
-        font.LoadFont("../../fonts/5x8.bdf")
+        font.LoadFont("../../fonts/4x6.bdf")
         color = graphics.Color(255, 0, 255)
 
         while True:
             self.matrix.Clear()
             txtTime = datetime.now(eastern).strftime('%l:%Mp')
-            graphics.DrawText(canvas, font, 0, 6, color, txtTime)
-            graphics.DrawText(canvas, font, 45, 6, color, textTemp)
+            graphics.DrawText(canvas, font, 5, 6, color, txtTime)
+            graphics.DrawText(canvas, font, 40, 6, color, textTemp)
             time.sleep(60)
 
 # Main function
