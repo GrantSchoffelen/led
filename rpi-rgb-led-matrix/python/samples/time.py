@@ -19,7 +19,7 @@ class GraphicsTest(SampleBase):
 
         while True:
             self.matrix.Clear()
-            txtTime = datetime.now(eastern).strftime('%l:%M::%Sp')
+            txtTime = datetime.now(eastern).strftime('%l:%Mp')
             graphics.DrawText(canvas, font, 0, 6, color, txtTime)
             time.sleep(2)
 

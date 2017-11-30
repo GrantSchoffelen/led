@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var news = require('./utils/news');
 var clock = require('./utils/clock');
+var temp = require('./utils/temp');
 
 
 var index = require('./routes/index');
@@ -42,6 +43,9 @@ app.use(function(req, res, next) {
 
 //Start clock
 clock.startClock();
+
+//get text
+temp.startTemp();
 
 
 // error handler
