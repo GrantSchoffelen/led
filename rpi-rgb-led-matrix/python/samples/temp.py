@@ -47,8 +47,8 @@ class GraphicsTest(SampleBase):
         while True:
             self.matrix.Clear()
             txtTime = datetime.now(eastern).strftime('%l:%Mp')
-            graphics.DrawText(canvas, font, 5, 6, color, txtTime)
-            graphics.DrawText(canvas, font, 40, 6, color, textTemp)
+            graphics.DrawText(canvas, font, 3, 7, color, txtTime)
+            graphics.DrawText(canvas, font, 45, 7, color, textTemp)
             time.sleep(60)
 
 # Main function
