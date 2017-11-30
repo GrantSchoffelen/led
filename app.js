@@ -42,10 +42,10 @@ app.use(function(req, res, next) {
 // news.getNewsHeadlines()
 
 //Start clock
-clock.startClock();
+// clock.startClock();
 
 //get text
-// temp.startTemp();
+temp.startTemp();
 
 
 // error handler
