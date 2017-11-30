@@ -5,6 +5,7 @@ from rgbmatrix import graphics
 import requests
 import json
 import math
+import time
 
 icons = {
     'clear-day' : 'clear-day',
