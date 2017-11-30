@@ -31,7 +31,7 @@ class GraphicsTest(SampleBase):
         future_16 = icons[res['hourly']['data'][15]['icon']]
         current_temp = math.ceil(res['currently']['apparentTemperature'])
         textTemp = ('%d°F, %s' % (current_temp, current_weather) )
-        textTemp = data.decode("utf8")
+        textTemp = textTemp.decode("utf8")
         canvas = self.matrix
         font = graphics.Font()
         font.LoadFont("../../fonts/5x8.bdf")
