@@ -6,6 +6,11 @@ import requests
 import json
 import math
 import time
+from datetime import datetime
+from pytz import timezone
+import time
+
+eastern = timezone('US/Eastern')
 
 icons = {
     'clear-day' : 'clear-day',
