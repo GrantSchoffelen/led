@@ -21,7 +21,7 @@ class GraphicsTest(SampleBase):
             self.matrix.Clear()
             txtTime = datetime.now(eastern).strftime('%l:%M::%Sp')
             graphics.DrawText(canvas, font, 0, 6, color, txtTime)
-            time.sleep(30)
+            time.sleep(2)
 
 # Main function
 if __name__ == "__main__":

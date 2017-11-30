@@ -1,5 +1,5 @@
-# from samplebase import SampleBase
-# from rgbmatrix import graphics
+from samplebase import SampleBase
+from rgbmatrix import graphics
 import requests
 import json
 import math
@@ -16,10 +16,6 @@ icons = {
     'partly-cloudy-day': 'partly-cloudy-day',
     'partly-cloudy-night': 'partly-cloudy-night'
 }
-
-
-
-
 
 class GraphicsTest(SampleBase):
     def __init__(self, *args, **kwargs):
